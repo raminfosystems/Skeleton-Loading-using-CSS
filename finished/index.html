@@ -55,7 +55,8 @@
       for (let i = 0; i < 10; i++) {
         container.append(cardTemplate.content.cloneNode(true));
       }
-
+      // add delay to fetch data
+      setTimeout(() => {
       fetch("data.json")
         .then((response) => response.json())
         .then((posts) => {
@@ -75,6 +76,7 @@
             container.append(div);
           });
         });
+      }, 3000);
     </script>
   </body>
 </html>
